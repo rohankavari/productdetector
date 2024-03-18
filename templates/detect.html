@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+</head>
+<body>
+    <h1>Object Detection</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <input type="submit" value="Upload">
+    </form>
+    {% if filename %}
+    <h2>Detected Objects</h2>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Detected Objects" style="width: 700px; height: 500px;">
+    {% endif %}
+</body>
+</html>
